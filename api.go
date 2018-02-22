@@ -11744,7 +11744,7 @@ func (e TL_auth_importAuthorization) encode() []byte {
 	x := NewEncodeBuf(512)
 	x.UInt(crc_auth_importAuthorization)
 	x.Int(e.Id)
-	x.Bytes(e.Bytes)
+	x.StringBytes(e.Bytes)
 	return x.buf
 }
 
