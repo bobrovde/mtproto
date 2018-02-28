@@ -188,7 +188,7 @@ func (m *MTProto) Connect() (err error) {
 			v := v.(TL_dcOption)
 			if m.IPv6 && v.Ipv6 {
 				m.dclist[v.Id] = fmt.Sprintf("[%s]:%d", v.Ip_address, v.Port)
-			} else if !v.Ipv6 {
+			} else if !v.Ipv6 && !v.Media_only{
 				m.dclist[v.Id] = fmt.Sprintf("%s:%d", v.Ip_address, v.Port)
 			}
 		}
