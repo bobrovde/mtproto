@@ -58,3 +58,9 @@ func (m *MTProto) ChannelsToggleSignatures(channel TL,enabled TL) (*TL,error){
 	})
 }
 
+func (m *MTProto) ChannelsEditPhoto(channel TL,photo TL) (*TL,error){
+	return m.InvokeSync(TL_channels_editPhoto{
+		Channel:channel,
+		Photo:photo,
+	})
+}
